@@ -3,3 +3,4 @@ export * from './common.service';
 export * from './database/database.module';
 export * from './database/abstract.schema';
 export * from './config/config.module';
+export * from './logger';
