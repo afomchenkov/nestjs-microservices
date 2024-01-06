@@ -5,6 +5,7 @@ import {
 } from '@nestjs/config';
 import * as Joi from 'joi';
 
+// TODO: to be removed as it is no longer used
 @Module({
   imports: [
     NestConfigModule.forRoot({
