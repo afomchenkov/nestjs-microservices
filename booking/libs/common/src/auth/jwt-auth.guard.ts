@@ -5,7 +5,7 @@ import {
   ExecutionContext,
 } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { AUTH_SERVICE } from '../constants/services';
+import { AUTH_SERVICE } from '../constants';
 import { tap, map } from 'rxjs';
 import { UserDto } from '../dto';
 
@@ -14,7 +14,9 @@ export class JwtAuthGuard implements CanActivate {
   constructor(@Inject(AUTH_SERVICE) private readonly authClient: ClientProxy) {}
 
   canActivate(context: ExecutionContext) {
-    const jwt = context.switchToHttp().getRequest().cookies?.Authentication;
+    const jwt =
+      context.switchToHttp().getRequest().cookies?.Authentication ||
+      context.switchToHttp().getRequest().headers?.Authentication;
 
     if (!jwt) {
       return false;
