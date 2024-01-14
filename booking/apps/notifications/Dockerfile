@@ -16,7 +16,7 @@ RUN npm i
 COPY apps/notifications apps/notifications
 COPY libs libs
 
-RUN cd apps/notifications && npm install npm@8.11.0 -g
+RUN cd apps/notifications && npm install
 
 RUN npm run build
 

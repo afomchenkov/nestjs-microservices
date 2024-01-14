@@ -16,7 +16,7 @@ RUN npm i
 COPY apps/payments apps/payments
 COPY libs libs
 
-RUN cd apps/payments && npm install npm@8.11.0 -g
+RUN cd apps/payments && npm install
 
 RUN npm run build
 

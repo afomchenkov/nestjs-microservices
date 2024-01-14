@@ -16,7 +16,7 @@ RUN npm i
 COPY apps/auth apps/auth
 COPY libs libs
 
-RUN cd apps/auth && npm install npm@8.11.0 -g
+RUN cd apps/auth && npm install
 
 RUN npm run build
 
