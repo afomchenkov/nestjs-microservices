@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package.json ./
 COPY package-lock.json ./
+COPY tsconfig.json tsconfig.json
 
 # RUN npm cache clean --force
 RUN npm install npm@8.11.0 -g
@@ -11,7 +12,11 @@ RUN npm cache clear -f
 RUN npm i
 # RUN npm i --loglevel verbose
 
-COPY . .
+# COPY . .
+COPY apps/auth apps/auth
+COPY libs libs
+
+RUN cd apps/auth && npm install npm@8.11.0 -g
 
 RUN npm run build
 

@@ -17,8 +17,8 @@ describe('NotificationsController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/healthcheck')
       .expect(200)
-      .expect('Hello World!');
+      .expect('notifications running...');
   });
 });

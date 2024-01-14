@@ -15,8 +15,8 @@ describe('PaymentsController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(paymentsController.getHello()).toBe('Hello World!');
+    it('should return "payments running..."', () => {
+      expect(paymentsController.healthcheck()).toBe('payments running...');
     });
   });
 });

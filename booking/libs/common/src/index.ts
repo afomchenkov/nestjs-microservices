@@ -9,3 +9,4 @@ export * from './database/abstract.repository';
 export * from './decorators';
 export * from './dto';
 export * from './logger';
+export * from './models';

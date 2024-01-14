@@ -6,6 +6,17 @@ Build image reservations: docker build ../../ -f Dockerfile -t booking_reservati
 Build image auth: docker build ../../ -f Dockerfile -t booking_auth
 Run: docker run booking_reservations
 
+Build reservations:
+docker build -t reservations -f . ../../
+Build auth:
+docker build -t auth -f . ../../
+Build auth:
+docker build -t notifications -f . ../../
+Build payments:
+docker build -t payments -f . ../../
+
+
+
 ## Installation
 
 ```bash
